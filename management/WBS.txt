@@ -1,0 +1,54 @@
+flowchart TD
+    classDef feature fill:#f9d5e5,stroke:#c7307a,stroke-width:2px
+    classDef milestone fill:#cfe2f3,stroke:#1155cc,stroke-width:2px
+    classDef story fill:#d9ead3,stroke:#38761d
+    classDef task fill:#fff2cc,stroke:#bf9000
+
+    subgraph FEATURES["Core Functional Modules"]
+        A1["AI Service System"]:::feature
+        A2["User Interaction System"]:::feature
+        A3["Data Storage & Sync"]:::feature
+        A4["Performance & Release"]:::feature
+    end
+
+    A1 --> B1("Milestone 1: Technical Validation"):::milestone
+    A1 --> B2("Milestone 2: Feature Development"):::milestone
+    A1 --> B3("Milestone 3: Algorithm Optimization"):::milestone
+
+    B1 --> C11["User Story 1.1: Validate AI Technical Feasibility"]:::story
+    C11 --> D111["Task: OpenAI API Testing"]:::task
+    C11 --> D112["Task: Generate Technical Selection Report"]:::task
+
+    B2 --> C12["User Story 2.1: Contextual Text Learning"]:::story
+    C12 --> D121["Task: Develop Text Extraction JS Module"]:::task
+    C12 --> D122["Task: Integrate AWS Lambda Service"]:::task
+
+    B3 --> C13["User Story 3.1: Personalized Recommendation Algorithm"]:::story
+    C13 --> D131["Task: Develop Python Recommendation Model"]:::task
+    C13 --> D132["Task: Deploy to Backend Service"]:::task
+
+    A2 --> B4("Milestone 2: Core Interaction"):::milestone
+    B4 --> C21["User Story 2.2: Vocabulary Marking Feature"]:::story
+    C21 --> D211["Task: Develop Highlight Plugin"]:::task
+    C21 --> D212["Task: Implement IndexedDB Storage"]:::task
+
+    A3 --> B5("Milestone 3: Basic Sync"):::milestone
+    A3 --> B6("Milestone 4: Advanced Control"):::milestone
+    B5 --> C31["User Story 3.2: Cross-Device Sync"]:::story
+    C31 --> D311["Task: Develop Cloud API Interface"]:::task
+    C31 --> D312["Task: Implement Auto-Sync Logic"]:::task
+
+    B6 --> C32["User Story 4.1: Conflict Detection"]:::story
+    C32 --> D321["Task: Develop Version Comparison Algorithm"]:::task
+    C32 --> D322["Task: Design Conflict Resolution UI"]:::task
+
+    A4 --> B7("Milestone 4: Release Preparation"):::milestone
+    B7 --> C41["User Story 4.2: Packaging & Deployment"]:::story
+    C41 --> D411["Task: Generate Chrome Extension Package"]:::task
+    C41 --> D412["Task: Write Installation Docs"]:::task
+
+    %% Critical Dependencies
+    D112 -.-> B2
+    D122 -.-> B3
+    D212 -.-> B5
+    D312 -.-> B6
